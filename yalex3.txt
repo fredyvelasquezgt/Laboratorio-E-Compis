@@ -1,0 +1,21 @@
+
+let delimitador = [' ']
+let espacioEnBlanco = delimitador+
+let digito = ['0'-'9']
+let numero = '-'?digito+
+let letra = ['a'-'z''A'-'Z']
+let identificador = letra(letra|digito)*
+
+
+rule tokens =
+  | identificador	{ print("Identificador") }
+  | numero			{ print("Número") }
+  | digito			{ print("Digito") }
+  | espacioEnBlanco	{ }
+  | delimitador	{  }
+  | '+'				{ print("Operador de suma") }
+  | '*'				{ print("Operador de multiplicación") }
+  | '='				{ print("Operador de asignación") }
+	| 'if-'				{ print("Operador if") }
+	| 'for-'				{ print("Operador for") }
+	| 'while-'				{ print("Operador while") }
